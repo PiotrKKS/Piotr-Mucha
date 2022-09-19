@@ -1,0 +1,74 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl10.css" type="text/css">
+    <title>Fabryka Cukierków</title>
+</head>
+<body>
+    
+    <div class="blok_gorny_1">
+        <a href="zamowienie.html" class="a">Zamów cukierki</a>
+    </div>
+    <div class="blok_gorny_2">
+        <a href="cukierki.html"><img src="logotyp.png" alt="Nasze logo"></a>
+    </div>
+    <div class="baner">
+        <h1>Strefa zamówień</h1>
+    </div>
+    <div class="blok_glowny_lewy">
+        Numer kształtu:<br>
+        <input type="number" id="kształt"><br>
+        skomponuj swój kolor, podaj RGB:<br>
+        R: <input type="number" id="R">
+        G: <input type="number" id="G">
+        B: <input type="number" id="B"><br>
+        <button onclick="zamowienie()">Zamówienie</button><br>
+        <p id="wynik">Twoje zamówienie</p>
+        <button id="kolor">Kolor</button>
+    </div>
+    <div class="blok_glowny_prawy">
+        <h2>Nasza oferta</h2>
+            <table>
+                <tr>
+                    <td>Kształty</td>
+                    <td rowspan="2">Możesz zamówić <br> dowolny kolor cukierka</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>cytryna</li>
+                            <li>liść</li>
+                            <li>banan</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <footer>
+        <p>Autor strony: <b>0000000000</b></p>
+    </footer>
+    <script>
+        function zamowienie() {
+            var ksztalt = document.getElementById("kształt").value;
+            var R = document.getElementById("R").value;
+            var G = document.getElementById("G").value;
+            var B = document.getElementById("B").value;
+
+            var wynikk;
+            if (ksztalt==1) {
+                wynikk = "cytryna";
+            }else if (ksztalt==2) {
+                wynikk = "liść";
+            }else if (ksztalt==3) {
+                wynikk = "banan";
+            }else{
+                wynikk = "inny";
+            }
+            document.getElementById("wynik").innerHTML = "Twoje zamówienie to cukierek " + wynikk;
+            document.getElementById("kolor").style.backgroundColor = "rgb("+R+","+G+","+B+")";
+        }
+    </script>
+</body>
+</html>
