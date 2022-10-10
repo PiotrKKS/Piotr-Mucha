@@ -1,0 +1,34 @@
+<html lang="pl" class="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+</head>
+<body>
+    
+<input type="text" id="imie">Imie<br>
+<input type="text" id="nazwisko">Nazwisko<br>
+<input type="number" id="wiek">Wiek<br>
+Płeć<input type="checkbox" id="a">K<input type="checkbox" id="b">M<br>
+<input type="button" onclick="oblicz()" value="wypisz"><br>
+<div id="wynik"></div>
+<script>
+    function oblicz()
+    {
+        var imie = document.getElementById("imie").value;
+        var nazwisko = document.getElementById("nazwisko").value;
+        var wiek = document.getElementById("wiek").value;
+
+        var k = document.getElementById("a").checked;
+        var m = document.getElementById("b").checked;
+
+        if(m==true)
+        document.getElementById("wynik").innerHTML="Pan "+imie+" "+nazwisko+" "+wiek+" lat";
+        if(k==true)
+        document.getElementById("wynik").innerHTML="Pani "+imie+" "+nazwisko+" "+wiek+" lat";
+    }
+</script>
+
+</body>
+</html>
